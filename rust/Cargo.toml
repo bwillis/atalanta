@@ -1,0 +1,12 @@
+[package]
+name = "hermes"
+version = "0.0.1"
+authors = [ "Ben <benjamin.willis@gmail.com>" ]
+
+[dependencies]
+iron = "*"
+time = "*"
+staticfile = "*"
+router = "*"
+juniper = { version = "0.5.3", features = ["iron-handlers"] }
+mount = { git = "https://github.com/iron/mount.git" }
