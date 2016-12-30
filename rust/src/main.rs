@@ -8,6 +8,7 @@ use iron::prelude::*;
 use juniper::iron_handlers::GraphQLHandler;
 
 mod schema;
+mod models;
 use schema::QueryRoot;
 
 use models::database::context_factory;

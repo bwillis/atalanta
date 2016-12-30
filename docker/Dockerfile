@@ -18,4 +18,4 @@ RUN git clone -b master https://github.com/bwillis/hermes.git /hermes
 RUN cd rust && cargo build
 
 # build the react application
-RUN cd npm && npm install
+RUN cd node && npm install

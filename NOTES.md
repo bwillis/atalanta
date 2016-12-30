@@ -13,7 +13,7 @@ Command to Run:
 
 # Mount a local directory on the container
 You can edit your code locally and use git pull/push etc with you local keys, but let the container build and run the server. This is better?
-`docker run -t -i -P --name dev -v /Users/ben/Google\ Drive/Hermes/rust:/hermes hermes`
+`docker run -t -i -P --name dev -v /Users/ben/Google\ Drive/Hermes:/hermes hermes`
 
 # View a mapped port
 `EXPOSE` with `-P` makes those ports exposed, but they bind to different ports on the parent aka http://localhost:XXXX. To view what the mapping is and see what the localhost port is run: `docker port cb1c7ee0713b`

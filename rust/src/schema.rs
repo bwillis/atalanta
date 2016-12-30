@@ -5,11 +5,6 @@ use models::database::Database;
 use juniper::FieldResult;
 
 pub struct QueryRoot;
-
-// GraphQL objects can access a "context object" during execution. Use this
-// object to provide e.g. database access to the field accessors.
-//
-// In this example, we use the Database struct as our context.
 graphql_object!(User: Database as "User" |&self| {
 
     // Expose a simple field as a GraphQL string.
@@ -39,7 +34,57 @@ graphql_object!(User: Database as "User" |&self| {
             .filter_map(|id| executor.context().users.get(id))
             .collect()
     }
+
+    field workout_plan_ids(&mut executor) -> Vec<&WorkoutPlan> {
+        self.workout_plan_ids.iter()
+            .filter_map(|id| executor.context().workout_plans.get(id))
+            .collect()
+    }
 });
+
+graphql_object!(WorkoutPlan: Database as "WorkoutPlan" |&self| {
+    field id() -> &String {
+        &self.id
+    }
+
+    field name() -> &String {
+        &self.name
+    }
+
+    field start_date() -> &String {
+        &self.start_date
+    }
+
+    field end_date() -> &String {
+        &self.end_date
+    }
+
+    field workouts(&mut executor) -> Vec<&Workout> {
+        self.workout_ids.iter()
+            .filter_map(|id| executor.context().workouts.get(id))
+            .collect()
+    }
+});
+
+graphql_object!(Workout: Database as "Workout" |&self| {
+    field id() -> &String {
+        &self.id
+    }
+
+    field name() -> &String {
+        &self.name
+    }
+
+    field description() -> &String {
+        &self.description
+    }
+
+    field date() -> &String {
+        &self.date
+    }
+});
+
+
 
 // The context object is passed down to all referenced types - all your exposed
 // types need to have the same context type.
