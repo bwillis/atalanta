@@ -9,6 +9,8 @@ RUN apt-get update && \
   apt-get install -y  nodejs && \
   apt-get install -y npm
 
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 RUN mkdir /hermes
 WORKDIR /hermes
 

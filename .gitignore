@@ -1,1 +1,3 @@
 rust/target/debug/*
+rust/target/public/assets/js/*
+node/node_modules/*
