@@ -11,7 +11,7 @@ git clone https://github.com/bwillis/atalanta.git /Users/ben/Google\ Drive/Atala
 
 2. Build the docker image
 ```
-docker build /Users/ben/Google\ Drive//Atalanta/docker -t hermes
+docker build /Users/ben/Google\ Drive//Atalanta/docker -t atalanta
 ```
 
 3. Run the image mounting the local git repo as the working directory
