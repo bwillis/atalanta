@@ -1,4 +1,4 @@
-# hermes
+# atalanta
 
 # Getting Started
 
@@ -6,17 +6,17 @@
 
 1. Clone the repo
 ```
-git clone https://github.com/bwillis/hermes.git /Users/ben/Google\ Drive/Hermes
+git clone https://github.com/bwillis/atalanta.git /Users/ben/Google\ Drive/Atalanta
 ```
 
 2. Build the docker image
 ```
-docker build /Users/ben/Google\ Drive//Hermes/docker -t hermes
+docker build /Users/ben/Google\ Drive//Atalanta/docker -t hermes
 ```
 
 3. Run the image mounting the local git repo as the working directory
 ```
-docker run -t -i -P --name dev -v /Users/ben/Google\ Drive/Hermes:/hermes hermes
+docker run -t -i -P --name dev -v /Users/ben/Google\ Drive/Atalanta:/atalanta atalanta
 ```
 
 4. Start the webserver
