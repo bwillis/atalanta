@@ -11,10 +11,10 @@ RUN apt-get update && \
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
-RUN mkdir /hermes
-WORKDIR /hermes
+RUN mkdir /atalanta
+WORKDIR /atalanta
 
-RUN git clone -b master https://github.com/bwillis/hermes.git /hermes
+RUN git clone -b master https://github.com/bwillis/atalanta.git /atalanta
 
 # build the rust application
 RUN cd rust && cargo build
